@@ -10,10 +10,11 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/Geopell-Cloud/myfirstclassrepo.git'
+              //  git 'https://github.com/Geopell-Cloud/myfirstclassrepo.git'
 
                 // Run Maven on a Unix agent.
-                //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+		//sh "chmod +x ./mvnw"
+                //sh "./mvnw -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
                  bat "mvnw.cmd -Dmaven.test.failure.ignore=true clean package"
@@ -22,10 +23,10 @@ pipeline {
             stage('Test') {
 		    steps {
                 // Run Maven on a Unix agent.
-                //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                 sh "./mvnw test"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvnw.cmd test"
+                // bat "mvnw.cmd test"
             }
        }
     }	       
