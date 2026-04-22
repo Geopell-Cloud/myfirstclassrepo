@@ -19,10 +19,17 @@ pipeline {
                  bat "mvnw.cmd -Dmaven.test.failure.ignore=true clean package"
             }
 	}
+<<<<<<< HEAD
     //         stage('Test') {
 	// 	    steps {
     //             // Run Maven on a Unix agent.
     //             //sh "mvn -Dmaven.test.failure.ignore=true clean package"
+=======
+            stage('Test') {
+		    steps {
+                 Run Maven on a Unix agent.
+                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+>>>>>>> 810d06f1541e3dbf8a35ddd3d027407417e33784
 
     //             // To run Maven on a Windows agent, use
     //              bat "mvnw.cmd test"
